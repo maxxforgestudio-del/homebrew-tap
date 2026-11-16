@@ -1,6 +1,7 @@
 # MAXX FORGE STUDIO Homebrew Tap
 
 ```bash
+brew trust maxxforgestudio-del/tap
 brew install --cask maxxforgestudio-del/tap/aries-dynamic-island
 ```
 

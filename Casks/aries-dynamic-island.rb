@@ -4,7 +4,7 @@ cask "aries-dynamic-island" do
 
   url "https://github.com/maxxforgestudio-del/aries-dynamic-island/releases/download/v#{version}/Aries-Dynamic-Island-#{version}.zip"
   name "Aries Dynamic Island"
-  desc "Dynamic Island for the Mac notch: music, lyrics, widgets, calls and tools"
+  desc "Dynamic Island for the notch: music, lyrics, widgets, calls and tools"
   homepage "https://maxxforgestudio-del.github.io/aries-dynamic-island/"
 
   livecheck do
@@ -14,17 +14,17 @@ cask "aries-dynamic-island" do
 
   auto_updates true
   depends_on arch: :arm64
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Aries Dynamic Island.app"
-
-  postflight do
-    # The app is ad-hoc signed (not notarized), so clear the download quarantine flag.
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Aries Dynamic Island.app"]
-  end
 
   zap trash: [
     "~/Library/Application Support/Aries Dynamic Island",
     "~/Library/Preferences/app.aries.dynamicisland.plist",
   ]
+
+  caveats <<~EOS
+    Aries isn't from the App Store. The first time, right-click it in
+    Applications and choose Open, then Open again.
+  EOS
 end
