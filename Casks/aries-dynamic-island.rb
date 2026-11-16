@@ -1,6 +1,6 @@
 cask "aries-dynamic-island" do
-  version "2.0.0"
-  sha256 "35324dde2168190c56075b79c2d117d90eb6115d01474ec2e0171d902f778e13"
+  version "2.0.1"
+  sha256 "d82150ecdc9555588218b3969903e048f76253f195bdc878b70d2bf9e9cb8f23"
 
   url "https://github.com/maxxforgestudio-del/aries-dynamic-island/releases/download/v#{version}/Aries-Dynamic-Island-#{version}.zip"
   name "Aries Dynamic Island"
